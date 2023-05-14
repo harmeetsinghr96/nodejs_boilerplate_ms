@@ -76,9 +76,7 @@ class App {
         const addr = this.server.address();
         const bind = typeof addr === "string" ? "pipe " + addr : "port " + this.port;
         debug("Listening on " + bind);
-        console.log(`User service is listening on PORT::${this.port}`);
-
-    };
+        console.log(`:: User-service is listening on :: PORT ${this.port} ::`);    };
 
     /**
      * @function normalizePort

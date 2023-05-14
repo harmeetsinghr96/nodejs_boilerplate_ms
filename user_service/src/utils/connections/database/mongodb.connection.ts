@@ -27,7 +27,7 @@ class MongoDb {
 
     private connectivity(url: string, options: object) {
         mongoose.connect(url, options).then((res: any) => {
-            console.log(':: MongoDB :: Connected successfully. ::');
+            console.log(':: MongoDB :: Connected successfully ::');
         }).catch((error: Error) => {
             console.log(':: MongoDb :: Failed To Connect. ::');
         });

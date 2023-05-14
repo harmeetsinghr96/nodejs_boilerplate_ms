@@ -4,6 +4,7 @@ import UserModel from './user.model';
 
 import * as INTERFACES from '../../interfaces';
 import * as UTILS from './../../utils';
+import * as MIDDLEWARES from '../../middlewares';
 
 class UserController implements INTERFACES.COMMON.IController {
     private userModel = new UserModel();
@@ -17,7 +18,7 @@ class UserController implements INTERFACES.COMMON.IController {
     private async initializeRoutes() {
         this.router
             .all(`${this.path}/*`)
-            .post(`${this.path}/register`, this.register)
+            .post(`${this.path}/register`, MIDDLEWARES.Cryption, this.register)
     }
 
     /**
